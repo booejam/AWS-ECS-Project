@@ -1,1 +1,7 @@
 .terraform/
+
+# Ignore SSH Private Keys
+Compute/*.pem
+**/*.pem
+bastion-keypair.pem
+
