@@ -35,6 +35,12 @@ variable "security-group-name" {
 #===================================================
 #              EC2 Configuration Variable
 #===================================================
+#EC2 Jump Host Security Group
+variable "ec2-bastion-name" {
+    description = "EC2 Bastion host instance name"
+    type = string
+    default = "innovation-bastion-host"
+}
 #EC2 AMI for Amazon Linux
 variable "amazon-linux-ami" {
     description = "amazon linux 2024 kernel-6.1 AMI"
@@ -43,13 +49,17 @@ variable "amazon-linux-ami" {
 }
 #EC2 Instance Type for Jump Host
 variable "ec2-instance-type" {
-    description = "EC2 Jump Host instance type variable"
+    description = "EC2 Bastion instance type variable"
     type = string
     default = "t2.micro"
 }
 #EC2 Jump Host Security Group
 variable "ec2-security-group-name" {
-    description = "Jump host security group name"
+    description = "Bastion security group name"
     type = string
-    default = "innovation-jumphost-sg"
+    default = "innovation-bastion-sg"
 }
+variable "ec2_monitoring_instance_profile" {
+    description = "ec2 monitoring role from IAM module"
+    type = string
+} 
